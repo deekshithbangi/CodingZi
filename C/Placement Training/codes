@@ -1,0 +1,321 @@
+Q1. Max of 2 numbers
+
+#include <stdio.h>
+
+int main(void) {
+    int a,b;
+    scanf("%d %d",&a,&b);
+    printf("%d",a>b?a:b);
+	return 0;
+}
+
+Q2.Max of 3 numbers
+
+#include <stdio.h>
+
+int main(void) {
+	int a,b,c,check1,check2;
+	
+	 scanf("%d %d %d",&a,&b,&c);
+	 check1=((a>b)&&(a>c)?a:b&c);
+         check2=((b>c)&&(b>a)?b:c);
+         printf("%d",check1>check2?check1:check2);
+	return 0;
+}
+
+or simply      printf("%d",a>b && a>c ? a : b>a && b>c ? b:c);
+
+Q3. Number is positive or negative or zero
+
+#include <stdio.h>
+
+int main(void) {
+    int a;
+    scanf("%d",&a);
+    if (a>=0){
+        if (a==0) printf("zero");
+        else printf("+ve number");
+    }
+    else printf("-ve number");
+    return 0;
+}
+
+#include <stdio.h>
+
+int main(void) {
+	int a;
+    scanf("%d",&a);
+	printf(a>=0?a==0?"zero":"+ve":"-ve");
+	return 0;
+}
+
+Q4. Even or Odd?
+
+#include <stdio.h>
+
+int main(void) {
+    int a;
+   printf(a%2==0?"Even":"Odd",scanf("%d",&a));
+}
+
+Q5. leap year or not?
+
+#include <stdio.h>
+
+int main(void) {
+	int a;
+	printf((a%4==0 && a%100!=0) | a%400==0 ? "leap":"not leap",scanf("%d",&a));
+	return 0;
+}
+
+Q6. a Character is alphabet or not
+
+#include <stdio.h>
+
+int main(void) {
+	char ch;
+	scanf("%c",&ch);
+	printf(ch>=97 && ch<=122 || ch>=65 && ch<=90 ? "Alphabet":"Not a Alphabet");
+	return 0;
+}
+
+or simply printf(ch>='a' && ch<='z' || ch>='A' && ch<='Z' ? "Alphabet":"Not a Alphabet",scanf("%c",&ch));
+ 
+Q7. Character is vowel or consonant?
+
+#include <stdio.h>
+
+int main(void) {
+	char ch;
+	scanf("%c",&ch);
+	printf(ch=='a'||ch=='e'||ch=='i'||ch=='o'||ch=='u'||ch=='A'||ch=='E'||ch=='I'||ch=='O'||ch=='U' ? "vowel":"Alphabet");
+	return 0;
+}
+
+Q8. Character is alphabet or number or special character ?
+
+#include <stdio.h>
+
+int main(void) {
+	char ch;
+	scanf("%c",&ch);
+	printf(ch>=97 && ch<=122 || ch>=65 && ch<=90 ? "Alphabet": ch>='0' && ch<='9' ? "Number": "Special charter");
+	return 0;
+}
+#include <stdio.h>
+
+int main(void) {
+	char ch='%';
+	scanf("%c",&ch);
+	if(ch>='a' && ch<='z' || ch>='A' && ch<='Z') printf("Alphabet");
+	else if (ch>='0' && ch<='9') printf("Digit");
+	else printf("Special character");
+	return 0;
+} 
+
+
+Q9. Character is upper or lowercase
+#include <stdio.h>
+
+int main(void) {
+	char ch;
+	scanf("%d",&ch);
+	if(ch>='a' && ch<='z') printf("lower case");
+	else printf("Uppercase");
+	return 0;
+}
+Q10. Input week number and print print days
+
+or simply printf(a==1?"Sunday":a==2?"Monday":a==3?"Tuesday":a==4?"Wedensday"
+	:a==5?"Thursday":a==6?"friday":a==7?"saturday":"wrong in input");
+#include <stdio.h>
+
+int main(void) {
+	int weekNo;
+	scanf("%d",&weekNo);
+	switch(weekNo) {
+	    case 1: 
+	    printf("Sunday");
+	    break;
+	    
+	    case 2: 
+	    printf("Monday");
+	    break;
+	    
+	    case 3: 
+	    printf("Tuesday");
+	    break;
+	    
+	    case 4: 
+	    printf("Wedensday");
+	    break;
+	    
+	    case 5: 
+	    printf("Thursday");
+	    break;
+	    
+	    case 6: 
+	    printf("friday");
+	    break;
+	    
+	    case 7: 
+	    printf("saturday");
+	    break;
+	    
+	    default: 
+	    printf("wrong input");
+	    break;
+	}
+	return 0;
+}
+
+Q11.input month number and print no.month days
+
+#include <stdio.h>
+
+int main(void) {
+	int a;
+	scanf("%d",&a);
+	printf("%d",a==1?31:a==2?28:a==3?31:a==4?30:a==5?31:a==6?30:a==7?31:a==8?31:a==9?30:a==10?31:a==11?30:a==12?31:-1);
+	return 0;
+}
+
+
+Q13. Valid triangle or not?
+
+#include <stdio.h>
+
+int main(void) {
+	int a,b,c;
+	scanf("%d %d %d",&a,&b,&c);
+	printf(a+b+c==180?"Valid traiangle":"Not valid");
+	return 0;
+}
+
+Q14. Triangle is eqi,scalar,iso ?
+
+#include <stdio.h>
+
+int main(void) {
+	int a,b,c;
+	scanf("%d %d %d",&a,&b,&c);
+	int sum=a+b+c;
+	if(sum==180) {
+	    if(a==b && a==c) printf("Equilateral");
+	    
+	    else if(a==b||a==c||b==c)  printf("Isosescle");
+	       
+	    else printf("Scalar triangle");
+	}
+	else printf("not a vaild triangle");
+	return 0;
+}
+
+
+#include <stdio.h>
+
+int main(void) {
+	int a,b,c;
+	scanf("%d %d %d",&a,&b,&c);
+	int sum=a+b+c;
+	printf(sum==180 ? (a==b && c==a ? "Equilateral" : a==b||a==c||b==c ? "isos" :"scalar") :"Not a valid triangle");
+	return 0;
+}
+
+Q15. roots of a quadratic equation ?
+
+
+Q16 addition of 2 number with out using + operator ?
+
+#include <stdio.h>
+
+int main(void) {
+	int a,b;
+	scanf("%d %d",&a,&b);
+	printf("%d",a-(-b));
+	return 0;
+}
+
+#include <stdio.h>
+
+int main(void) {
+	int a,b;
+	scanf("%d %d",&a,&b);
+	while(b>0) {
+	    a++;
+	    b--;
+	}
+	printf("%d",a);
+	return 0;
+}
+
+
+Q17. Numuber of inputs count
+
+#include <stdio.h>
+
+int main(void) {
+	int count=0,a;
+    while(EOF!=scanf("%d",&a)) count++;
+	printf("%d",count);
+	return 0;
+}
+
+Q20. Remainder and Quotient
+
+#include <stdio.h>
+
+int main(void) {
+        int divident,divisor,remander,quoitent;
+	scanf("%d %d",&divident,&divisor);
+        remander=divident%divisor;
+        quoitent=divident/divisor;
+	printf("remainder:%d quoitent: %d",remander,quoitent);
+	return 0;
+}
+
+
+
+Q43. 2nd smallest element in array
+
+#include <stdio.h>
+
+int main(void) {
+    int *arr,n;
+    scanf("%d",&n);
+    arr=(int*)calloc(n,sizeof(int));
+    for(int i=0;i<n;i++) scanf("%d",(arr+i));
+    for(int i=0;i<n;i++) {
+        for(int j=0;j<n;j++){
+            if(*(arr+i)<*(arr+j)){
+                int temp=*(arr+i);
+                *(arr+i)=*(arr+j);
+                *(arr+j)=temp;
+            }
+        }
+    }
+    printf("%d",*(arr+1));
+	return 0;
+}
+
+Q48. Binary to Decimal
+#include <stdio.h>
+#include<math.h>
+
+int main(void) {
+    int n,digit,i,sum=0;
+    scanf("%d",&n);
+
+    while(n!=0){
+       digit=n%10;
+       if(digit==1)
+           sum=sum+pow(2,i);
+        n/=10;
+        i++;
+    }
+    printf("%d",sum);
+
+	return 0;
+}
+
+ 
